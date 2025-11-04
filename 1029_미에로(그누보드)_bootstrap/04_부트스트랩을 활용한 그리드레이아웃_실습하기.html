@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_부트스트랩을 활용한 그리드레이아웃_실습하기</title>
+  <!-- 부트스트랩 CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 부트스트랩 JS, jQuery, Popper.js (필수 순서) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- 부트스트랩 아이콘 주소 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <h2>04_부트스트랩을 활용한 그리드레이아웃_실습하기</h2>
+  <p>12장의 상품 목록을 작성하여 반응형웹 그리드 레이아웃 구현하기</p>
+  <p>pc버전에서 가로 4장씩 배치, tablet해상도에서 3장, 모바일에서 2, 1장씩 배치하기</p>
+  <p>https://getbootstrap.kr/docs/5.0/examples/grid/#containers</p>
+    <h3>실습예제 스타벅스 음료 페이지의 상품목록 그리드 레이아웃 설정하기</h3>
+  <p>가로 해상도 992이상일 경우 4칸씩 배치, 768이상일 경우 3칸씩 배치, 768미만일경우 2칸씩 배치</p>
+  <article>
+    <h4>상품목록</h4>
+    <ul class="row container-xl">
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks1.jpg" alt="음료이미지"><br>에스프레소 마키아또</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks2.png" alt="음료이미지"><br>라벤더 카페 브레베</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks3.jpg" alt="음료이미지"><br>토피 넛 라떼</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks4.jpg" alt="음료이미지"><br>바닐라 라떼</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks5.jpg" alt="음료이미지"><br>여수 윤슬 헤이즐넛 콜드브루</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks6.jpg" alt="음료이미지"><br>막걸리향 크림 콜드 브루</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks7.jpg" alt="음료이미지"><br>베르가못 콜드 브루</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks8.jpg" alt="음료이미지"><br>아이스 윈터 스카치 바닐라 라떼</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks9.jpg" alt="음료이미지"><br>스타벅스 1호점 크림 라떼</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks10.jpg" alt="음료이미지"><br>스파클링 시트러스 에스프레소</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks11.jpg" alt="음료이미지"><br>블랙&화이트 콜드 브루</a></li>
+      <li class="col-lg-3 col-md-4 col-sm-6"><a href="#" title="상품 상세 페이지로 이동"><img src="./images/starbucks12.jpg" alt="음료이미지"><br>제주 비자림 리저브 콜드 브루</a></li>
+    </ul>
+  </article>
+  <style>
+
+    article*{
+      padding: 0px; margin: 0px;
+    }
+    article{
+      /* max-width: 1200px;
+      width: 100%; */
+      margin: 0 auto;
+      border:2px solid #f00;
+
+    }
+    article>h4{
+      text-align: center;
+    }
+    article ul{
+      margin: 0 auto;
+      list-style: none;
+      border:1px solid #00f;
+    }
+    article li{
+      text-align: center;
+    }
+    article li img{
+      width: 100%;
+      object-fit: cover;
+    }
+    article a{
+      color: #333;
+      text-decoration: none;
+      line-height: 60px;
+    }
+    article a:hover{
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</body>
+</html>

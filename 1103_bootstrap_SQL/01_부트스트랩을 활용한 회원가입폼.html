@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_부트스트랩을 활용한 회원가입폼</title>
+  <!-- 1. 부트스트랩 css 연결 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- 2. 부트스트랩 js연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- 부트스트랩 아이콘 주소 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body{
+      background:linear-gradient(135deg, #4e73df, #224abe);
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items: center;
+    }
+    .card{
+      border-radius:10px;
+      box-shadow:0px 4px 8px rgba(0,0,0,.2);
+      width:100%;
+      max-width:500px;
+      /* width:70%;
+      margin:0 auto; */
+    }
+    h2{font-size:22px;}
+  </style>
+</head>
+<body>
+  <div class="card p-4">
+    <h5 class="text-center mb-4">01_부트스트랩을 활용한 회원가입폼</h5>
+    <form>
+      <div class="mb-3 row g-3">
+        <div class="col-6">
+          <label class="form-label" for="">이름</label>
+          <input class="form-control" type="text">
+        </div>
+
+        <div class="col-6">
+          <label class="form-label" for="">별명</label>
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      
+
+      <div class="mb-3">
+        <label class="form-label" for="">이메일</label>
+        <input class="form-control" type="email">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="">주소</label>
+        <input class="form-control" type="text">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="">상세주소</label>
+        <input class="form-control" type="text">
+      </div>
+
+      <div class="row mb-3 g-3">
+        <div class="col-8">
+          <label for="method" class="form-label">가입경로</label>
+          <select class="form-select" id="method">
+            <option>선택</option>
+            <option>지인추천</option>
+            <option>광고</option>
+            <option>기타</option>
+          </select>
+        </div>
+
+        <div class="col-4">
+          <label class="form-label" for="">추천인 코드</label>
+          <input class="form-control" type="text" placeholder="추천인 코드">
+        </div>
+      </div>
+      <div class="mb-3">
+        <input class="form-check-input" type="checkbox" name="" id="">
+        <label class="form-label" for="">개인정보 수집 및 이용에 동의합니다</label>
+      </div>
+      <input type="submit" value="가입완료" class="btn btn-primary w-100">
+    </form>
+  </div>
+</body>
+</html>
