@@ -18,11 +18,8 @@
 
     .navbar {
       position: sticky;
-      /* 스크롤 시 상단 고정 */
       top: 0;
-      /* 상단 기준 */
       z-index: 1030;
-      /* 다른 요소 위로 표시 */
     }
 
 
@@ -32,13 +29,11 @@
 
     .navbar-dark .navbar-nav .nav-link {
       color: #ffffff !important;
-      /* 흰색으로 고정 */
     }
 
     .navbar-dark .navbar-nav .nav-link:hover,
     .navbar-dark .navbar-nav .nav-link:focus {
       color: #aef7ae !important;
-      /* 마우스 올릴 때 연한 초록빛 */
     }
 
     #myCarousel {
@@ -125,7 +120,7 @@
     <nav class="navbar navbar-dark bg-dark navbar-expand-md" aria-label="내비게이션 바">
       <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
         <a href="#" title="메인페이지 바로가기" class="navbar-brand">
-          <img src="./images/footer-pulmuone.svg" alt="부트스트랩 로고" class="logo">
+          <img src="./images/footer-pulmuone.svg" alt="로고" class="logo">
         </a>
 
         <!-- 모바일 해상도일 경우 나오는 메뉴버튼-->
@@ -302,18 +297,28 @@
       </div>
     </article>
   </main>
-  <footer class="bg-dark text-start text-light py-3 w-100">
+  <footer class="bg-dark text-center text-light py-3 w-100">
     <div class="container">
       <div class="float-end">
         <a href="#" title="위로 바로가기" class="text-decoration-none link-light">Top</a>
       </div>
+      <img src="./images/footer-pulmuone.svg" alt="" class="my-2">
 
-      <p>&copy; 2025 Company, Inc. &middot;
-        <a href="#" title="이용약관" class="link-light text-decoration-none">Privacy</a>
+      <p class="pt-2">
+
+        <a href="#" title="개인정보처리방침" class="link-light text-decoration-none fw-bold">개인정보처리방침</a>
         &middot;
-        <a href="#" title="정보" class="link-light text-decoration-none">Terms</a>
+        <a href="#" title="이메일주소 무단수집 거부" class="link-light text-decoration-none">이메일주소 무단수집 거부</a>
+        &middot;
+        <a href="#" title="사이버감사실" class="link-light text-decoration-none">사이버감사실</a>
+        &middot;
+        <a href="#" title="공장견학" class="link-light text-decoration-none">공장견학</a>
+        &middot;
+        <a href="#" title="풀무원채용" class="link-light text-decoration-none">풀무원채용</a>
 
       </p>
+      <p>법인명 : (주)풀무원 서울시 강남구 광평로 280 로즈데일빌딩 대표전화 : 080-022-0085 <br> Copyright &copy; Pulmuone Corporate All Rights
+        Reserved.</p>
     </div>
   </footer>
 
