@@ -16,8 +16,29 @@
       overflow-y: hidden;
     }
 
+    .navbar {
+      position: sticky;
+      /* 스크롤 시 상단 고정 */
+      top: 0;
+      /* 상단 기준 */
+      z-index: 1030;
+      /* 다른 요소 위로 표시 */
+    }
+
+
     .logo {
       height: 50px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #ffffff !important;
+      /* 흰색으로 고정 */
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link:focus {
+      color: #aef7ae !important;
+      /* 마우스 올릴 때 연한 초록빛 */
     }
 
     #myCarousel {
@@ -35,6 +56,7 @@
 
     .carousel-item>h3 {
       position: absolute;
+      z-index: 100;
       font-size: 1.5rem;
       left: 50%;
       top: 50%;
@@ -42,41 +64,68 @@
       color: #ffffff;
     }
 
+    /* 콘텐츠 2번 */
+    .con2 img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    .con2 h2 {
+      font-weight: bold;
+      color: #326120;
+    }
+
     /* 정보트론 */
     .jumbotron {
       padding-bottom: 25px;
       margin-bottom: 50px;
+
+    }
+
+    .bg-body-tertiary {
+      background-image: url(./images/con3bg.jpg) !important;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left;
     }
 
     .jumbotron h2 {
-      font-size: 6rem;
+      font-size: 3.6rem;
       margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .t01 {
+      padding: 10px 0px 30px 0px;
+      color: #ffffff;
+    }
+
+    .con4 img {
+      width: 100%;
+      height: 30%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+
+
+    footer>p {
+      color: #ffffff;
     }
   </style>
 </head>
 
 <body>
-  <h2>반응형 내비게이션</h2>
-  <p>BootStrap의 강력하고 반응형적인 내비게이션 헤더, 내비게이션 바의 문서와 예. 콜랩스(collapse) 플러그인 지원을 포함한 브랜딩, 내비게이션 등의 지원이 포함되어 있습니다</p>
-  <h3>내비게이션 작동 원리</h3>
-  <ul>
-    <li>내비게이션 바는 .navbar를 .navbar-expand{-sm|-md|-lg|-xl|-xxl}로 감싸야 하며, color scheme클래스가 필요합니다.</li>
-    <li>내비게이션과 그 콘텐츠는 기본적으로 유동적입니다. container를 변경하여 다양한 방법으로 가로폭을 제한 할 수 있습니다</li>
-    <li>내비게이션에서 배치 및 간격 제어는 spacing과 flex유틸리티 클래스를 사용합니다.</li>
-    <li>내비게이션은 기본적으로 반응형이지만 간단하게 변경이 가능합니다. 반응형 동작은 Collapse javascript플러그인에 의존합니다</li>
-    <li>접근성을 확보하려면 nav요소를 사용하거나 혹은 div와 같이 보다 범용적인 요소를 사용하는 경우 role='navigation'을 추가하여 스크린 리더 사용자를 위해 랜드마크가 되는 곳임을 명시적으로
-      알려주어야 합니다.</li>
-    <li>현재 페이지에는 aria-current="page"를, 셋트 안에서의 현재 아이템에는 aria-current="true"를 사용하여 현재 아이템을 표시합니다.</li>
-    <li>.navbar 기본 클래스 범위가 지정된 css변수를 사용하여 테마를 지정할 수 있습니다. .navbar-light는 더이상 사용되지 않으며, 추가 스타일을 대신 css변수로 정의하도록
-      navbar-dark가 재작성 되었습니다</li>
-  </ul>
 
   <header>
     <!-- 내비게이션 바 -->
     <nav class="navbar navbar-dark bg-dark navbar-expand-md" aria-label="내비게이션 바">
-      <div class="container-fluid">
-        <a href="#" title="메인페이지 바로가기">
-          <img src="../logo.png" alt="부트스트랩 로고" class="logo">
+      <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+        <a href="#" title="메인페이지 바로가기" class="navbar-brand">
+          <img src="./images/footer-pulmuone.svg" alt="부트스트랩 로고" class="logo">
         </a>
 
         <!-- 모바일 해상도일 경우 나오는 메뉴버튼-->
@@ -84,43 +133,67 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- 가로메뉴 -->
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a href="#" title="" class="nav-link active">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" title="" class="nav-link">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" title="" class="nav-link disabled">Disabled</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" title="" class="nav-link">Menu</a>
+        <div class="collapse navbar-collapse justify-content-center align-items-center" id="menu"
+          style="position: absolute; left: 50%; transform: translateX(-50%);">
+          <ul class="navbar-nav mb-2 mb-md-0">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle " id="dropdownMenu" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                회사소개</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" title="" class="dropdown-item">총괄 CEO인삿말</a></li>
+                <li><a href="#" title="" class="dropdown-item">CI 소개</a></li>
+                <li><a href="#" title="" class="dropdown-item">연혁</a></li>
+                <li><a href="#" title="" class="dropdown-item">가치체계</a></li>
+              </ul>
             </li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" id="dropdownMenu" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Drop down</a>
+                사회 책임 경영</a>
               <ul class="dropdown-menu">
-                <li><a href="#" title="" class="dropdown-item">munu1</a></li>
-                <li><a href="#" title="" class="dropdown-item">munu2</a></li>
-                <li><a href="#" title="" class="dropdown-item">munu3</a></li>
-                <li><a href="#" title="" class="dropdown-item">munu4</a></li>
+                <li><a href="#" title="" class="dropdown-item">개요</a></li>
+                <li><a href="#" title="" class="dropdown-item">추진전략</a></li>
+                <li><a href="#" title="" class="dropdown-item">활동 및 실적</a></li>
+                <li><a href="#" title="" class="dropdown-item">수상</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="dropdownMenu" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                바른먹거리</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" title="" class="dropdown-item">지속가능 식생활</a></li>
+                <li><a href="#" title="" class="dropdown-item">지속가능 식품</a></li>
+                <li><a href="#" title="" class="dropdown-item">바른먹거리 원칙</a></li>
+                <li><a href="#" title="" class="dropdown-item">바른 먹거리 캠페인</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="dropdownMenu" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                뉴스룸</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" title="" class="dropdown-item">풀무원 뉴스</a></li>
+                <li><a href="#" title="" class="dropdown-item">ESG 경영</a></li>
+                <li><a href="#" title="" class="dropdown-item">멀티미디어</a></li>
+                <li><a href="#" title="" class="dropdown-item">자료 경영</a></li>
               </ul>
             </li>
           </ul>
-          <!-- 검색폼 -->
-          <form role="search">
-            <input type="search" placeholder="검색어 입력" aria-label="검색어 입력" class="form-control">
-          </form>
+
         </div>
+        <!-- 검색폼 -->
+        <form role="search" class="d-none d-md-block" style="width: 250px;">
+          <input type="search" placeholder="검색어 입력" class="form-control">
+        </form>
       </div>
     </nav>
   </header>
   <!-- 메인 콘텐츠 영역 -->
   <main>
-    <article id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <!-- 메인 슬라이드 -->
+    <article id="myCarousel" class="carousel slide mb-6 carousel-fade" data-bs-ride="carousel">
       <!-- data-bs-ride="carousel"자동으로 움직임 -->
       <div class="carousel-indicators">
         <button type="button" class="active" aria-label="slide1" data-bs-target="#myCarousel" data-bs-slide-to="0"
@@ -131,15 +204,15 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <h3>타이틀1</h3>
-          <img src="./images/Rectangle 7.jpg" alt="">
+          <img src="./images/b1.jpg" alt="">
         </div>
         <div class="carousel-item">
           <h3>타이틀2</h3>
-          <img src="./images/Rectangle 8.jpg" alt="">
+          <img src="./images/b2.jpg" alt="">
         </div>
         <div class="carousel-item">
           <h3>타이틀3</h3>
-          <img src="./images/Rectangle 9.jpg" alt="">
+          <img src="./images/b3.jpg" alt="">
         </div>
       </div>
 
@@ -155,29 +228,93 @@
         <span class="visually-hidden">Next</span>
       </button>
     </article>
+    <!-- 가로 3단 목록 콘텐츠 -->
+    <article class="container my-5">
+      <div class="row con2">
+        <div class="col-lg-4 text-center">
+          <img class="my-5" src="./images/main-room-eating1.png" alt="">
+          <h2>바른 먹거리</h2>
+          <p>내 가족의 건강과 행복을 위한 바른 먹거리는 무엇일까요</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img class="my-5" src="./images/main-room-eating2.png" alt="">
+          <h2>지속 가능한 식생활</h2>
+          <p>여러분도 지속가능 식생활을 시작해보세요.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img class="my-5" src="./images/main-room-eating3.png" alt="">
+          <h2>바른 먹거리 캠페인</h2>
+          <p>어렸을때 입맛이 평생 건강</p>
+        </div>
+      </div>
+    </article>
     <!-- 점보트론 -->
-    <article class="container p-5">
-      <div class="jumbotron text-center bg-body-tertiary rounded-3">
-        <h2>광고문구 title</h2>
-        <p>점보트론은 대형 스크린 TV의 상표명이자, 대형 전광판을 통칭하는 말입니다. <br> 블로그형 홈페이지에서 자주 사용되며, 회사 이미지나 사진을 첨부해놓고 그 위에 메뉴를 만드는 경우가 있습니다.
-          <br> 중요한 정보를 적어놓은 쇼케이그를 메뉴 밑에다가 두는 경우가 많은데요, 이걸 부트스트랩에 적용을 하려면 점보트론이 필요합니다
+    <article class="container py-5">
+      <div class="jumbotron text-start bg-body-tertiary rounded-3 p-5">
+        <h2>#풀무원이 만드는 건강한 내일</h2>
+        <p class="t01">바른 먹거리로 사람과 지구의 건강한 내일을 만드는 #풀무원 이야기
         </p>
-        <p><a href="#" role="button" title="" class="btn btn-primary btn-lg">더보기</a></p>
+        <p><a href="https://shop.pulmuone.co.kr/sustainable" role="button" title="" class="btn btn-success">더보기</a></p>
+      </div>
+    </article>
+    <!-- 가로 4단 목록 콘텐츠 -->
+    <article class="container mb-5 con4">
+      <div class="row pb-5">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <img src="./images/news1.jpg" alt="">
+          <h4>풀무원, 음성군 초등학생들과 ‘두부공장 견학’</h4>
+          <p>음성군 ‘평생학습과 늘봄 사업’과 연계해 9월부터 월 1회 특별 견학 프로그램 운영
+            참가자들에게 두부공장 시설 견학, 두부 만들기·콩 수확 체험 등 풍성한 체험 기회 제공
+            지역 특색 반영한 맞춤 프로그램 확대하며 지역사회 상생 실천
+          </p>
+          <a href="https://news.pulmuone.co.kr/pulmuone/newsroom/viewNewsroom.do?id=3697" role="button" title="더보기"
+            class="btn btn-success btn-line">더보기</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <img src="./images/news2.jpg" alt="">
+          <h4>연중 최대 프로모션 ‘#풀페스타’ 열어 다양한 이벤트</h4>
+          <p>연중 최대 혜택 제공하는 ‘#풀페스타(#FULL Festa)’로 다양한 이벤트 진행<br>
+            3일부터 13일까지, 14일부터 30일까지 2차로 나누어 장바구니 쿠폰 등 최대 65% 할인 특가풀무원은 나와 지구를 위한 바른먹거리 마켓 ‘#(샵)풀무원’에서 연중 최대</p>
+          <a href="https://news.pulmuone.co.kr/pulmuone/newsroom/viewNewsroom.do?id=3696" role="button" title="더보기"
+            class="btn btn-success btn-line">더보기</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <img src="./images/news3.jpg" alt="">
+          <h4>풀무원 올가홀푸드, 유기농 김치 4종 출시</h4>
+          <p>김장 부담 증가에 포장김치 수요 급증하는 가운데 유기농 김치로 프리미엄 김치 시장 공략 나서
+
+            유기농 원재료 95% 이상 사용한 김치 4종 포기김치·깍두기·백김치·석박지 출시
+
+            계약 재배·콜드체인 시스템으로 균일한 품질과 신선한 맛·풍미 유지
+
+          </p>
+          <a href="https://news.pulmuone.co.kr/pulmuone/newsroom/viewNewsroom.do?id=3694" role="button" title="더보기"
+            class="btn btn-success btn-line">더보기</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <img src="./images/news4.jpg" alt="">
+          <h4>[잇데이] 컵 150g, 요거트의 적정 단위에 대한 고찰</h4>
+          <p>서유럽 여행을 가보면 일상적으로 길이나 벤치에서 식사를 하는 사람들을 많이 볼 수 있다. 여러 이유가 있는데 역시 물가가 워낙 비싸서다.'쓴 만큼 낸다'는 자본주의적 개념이 워낙 확실하니
+            식당에서 자리만 잡고 앉아도 팁을 내야 </p>
+          <a href="https://news.pulmuone.co.kr/pulmuone/newsroom/viewNewsroom.do?id=3693" role="button" title="더보기"
+            class="btn btn-success btn-line">더보기</a>
+        </div>
       </div>
     </article>
   </main>
-  <footer class="container bg-dark py-3">
-    <div class="float-end">
-      <a href="#" title="위로 바로가기" class="text-decoration-none link-light">Top</a>
+  <footer class="bg-dark text-start text-light py-3 w-100">
+    <div class="container">
+      <div class="float-end">
+        <a href="#" title="위로 바로가기" class="text-decoration-none link-light">Top</a>
+      </div>
+
+      <p>&copy; 2025 Company, Inc. &middot;
+        <a href="#" title="이용약관" class="link-light text-decoration-none">Privacy</a>
+        &middot;
+        <a href="#" title="정보" class="link-light text-decoration-none">Terms</a>
+
+      </p>
     </div>
-
-    <p>&copy; 2025 Company, Inc. &middot;
-      <a href="#" title="이용약관" class="link-light text-decoration-none">Privacy</a>
-      &middot;
-      <a href="#" title="정보" class="link-light text-decoration-none">Terms</a>
-
-    </p>
-
   </footer>
 
 </body>
